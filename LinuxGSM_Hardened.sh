@@ -114,6 +114,11 @@ configure_$GAMESERVER
 #
 echo Installing the Server
 su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER auto-install"
+if [ "$GAMESERVER" == "boserver|bb2server|bmdmserver|cssserver|csgoserver|dodsserver|emserver|gmodserver|insserver|nmrihserver|tf2server|tuserver|zpsserver" ]; then
+echo $GSLT
+else
+echo No Gameserver Login Token Needed
+fi
 
 # Update the server IP and name
 echo Updating the server IP and name
