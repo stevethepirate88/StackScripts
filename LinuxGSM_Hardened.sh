@@ -116,7 +116,7 @@ echo Installing the Server
 su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER auto-install"
 echo "Adding GSLT"
 if [[ "$GAMESERVER" =~ (^boserver$|^bb2server$|^bmdmserver$|^cssserver$|^csgoserver$|^dodsserver$|^emserver$|^gmodserver$|^insserver$|^nmrihserver$|^tf2server$|^tuserver$|^zpsserver$) ]]; then
-echo -e "$GSLT" >>  /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
+echo -e "gslt=$GSLT" >>  /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
 else
 echo No Gameserver Login Token Needed
 fi
