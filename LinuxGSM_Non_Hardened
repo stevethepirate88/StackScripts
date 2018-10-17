@@ -75,6 +75,11 @@ chown -R $GAMESERVER:$GAMESERVER /home/$GAMESERVER/*
 
 echo running LinuxGSM script
 su - $GAMESERVER -c "/home/$GAMESERVER/linuxgsm.sh $GAMESERVER"
+if [[ "$GAMESERVER" =~ (^boserver$|^bb2server$|^bmdmserver$|^cssserver$|^csgoserver$|^dodsserver$|^emserver$|^gmodserver$|^insserver$|^nmrihserver$|^tf2server$|^tuserver$|^zpsserver$) ]]; then
+echo $GSLT
+else
+echo No Gameserver Login Token Needed
+fi
 
 #
 # Game specific settings
