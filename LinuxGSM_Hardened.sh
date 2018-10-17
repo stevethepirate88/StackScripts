@@ -114,8 +114,9 @@ configure_$GAMESERVER
 #
 echo Installing the Server
 su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER auto-install"
+echo "Adding GSLT"
 if [[ "$GAMESERVER" =~ (^boserver$|^bb2server$|^bmdmserver$|^cssserver$|^csgoserver$|^dodsserver$|^emserver$|^gmodserver$|^insserver$|^nmrihserver$|^tf2server$|^tuserver$|^zpsserver$) ]]; then
-echo $GSLT
+echo -e "$GSLT" >>  /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
 else
 echo No Gameserver Login Token Needed
 fi
@@ -155,4 +156,4 @@ systemctl enable ufw
 systemctl start ufw
 ufw enable
 
-echo Job's done!
+echo "Job's done!"
