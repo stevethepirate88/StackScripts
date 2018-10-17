@@ -7,7 +7,7 @@
 #<UDF name="steampassword" Label="Steam user password (required for some game installations. Optional for most games." default="Password" example="strongPassword" />
 #<UDF name="sspubkey" Label="SSH pubkey (installed for root and sudo user)?" example="ssh-rsa ..." />
 #<UDF name="hostname" label="Hostname" example="Local hostname">
-#<UDF name="gslt" label="Steam Game Server Login Token" example="Required for some games (see notes), optional otherwise" default="optional"
+#<UDF name="gslt" label="Steam Game Server Login Token" example="Required for some games (see notes), optional otherwise" default="optional" />
 # HOSTNAME=
 #
 #<UDF name="fqdn" label="Fully Qualified Domain Name" example="Provide the domain name you'd like to use for your server">
@@ -114,9 +114,8 @@ configure_$GAMESERVER
 #
 echo Installing the Server
 su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER auto-install"
-echo "Adding GSLT"
 if [[ "$GAMESERVER" =~ (^boserver$|^bb2server$|^bmdmserver$|^cssserver$|^csgoserver$|^dodsserver$|^emserver$|^gmodserver$|^insserver$|^nmrihserver$|^tf2server$|^tuserver$|^zpsserver$) ]]; then
-echo -e "gslt=$GSLT" >>  /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
+echo $GSLT
 else
 echo No Gameserver Login Token Needed
 fi
