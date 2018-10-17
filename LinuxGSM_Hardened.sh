@@ -114,7 +114,7 @@ su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER auto-install"
 echo "Is this going to set up the GSLT properly? Who knows? Let's find out!"
 echo "Adding another echo to see if the above is missing but this one appears."
 if [[ "$GAMESERVER" =~ (^boserver$|^bb2server$|^bmdmserver$|^cssserver$|^csgoserver$|^dodsserver$|^emserver$|^gmodserver$|^insserver$|^nmrihserver$|^tf2server$|^tuserver$|^zpsserver$) ]]; then
-echo -e "gslt=$GSLT" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
+echo -e "\ngslt=$GSLT" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESERVER.cfg
 else
 echo No Gameserver Login Token Needed
 fi
