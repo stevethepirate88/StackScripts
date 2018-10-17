@@ -19,9 +19,6 @@
 #<UDF name="gamename" label="Game Server Name" example="Name of the game server within your game">
 # GAMENAME=
 
-# Sets source library script
-source <ssinclude StackScriptID="333596">
-
 # Added logging for debug purposes
 exec >  >(tee -a /root/stackscript.log)
 exec 2> >(tee -a /root/stackscript.log >&2)
