@@ -317,6 +317,12 @@ function dependency_pcserver {
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
 }
 
+function dependency_pstbsserver {
+     debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
+     debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
+     sudo dpkg --add-architecture i386; sudo apt update; sudo apt install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+}
+
 function dependency_pvkiiserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
@@ -718,6 +724,10 @@ function configure_pcserver {
      echo No Extra Configurations Needed
 }
 
+function configure_pstbsserver {
+     echo No Extra Configurations Needed
+}
+
 function configure_pvkiiserver {
      echo No Extra Configurations Needed
 }
@@ -926,6 +936,9 @@ function firewall_csczserver {
 
 function firewall_csgoserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27020/udp
+     ufw allow 27005/udp
 }
 
 function firewall_csserver {
@@ -1077,6 +1090,10 @@ function firewall_pcserver {
      echo Starting game specific firewall
 }
 
+function firewall_pstbsserver {
+     echo Starting game specific firewall
+)
+
 function firewall_pvkiiserver {
      echo Starting game specific firewall
 }
@@ -1157,6 +1174,7 @@ function firewall_tf2server {
      ufw allow 27014:27050/tcp
      ufw allow 3478:4380/udp
      ufw allow 27000:27030/udp
+     ufw allow 26901
 }
 
 function firewall_tfcserver {
