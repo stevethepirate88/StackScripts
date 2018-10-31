@@ -873,18 +873,25 @@ function firewall_arkserver {
 function firewall_arma3server {
      echo Starting game specific firewall
      ufw allow 2302:2305/udp
+     ufw allow 44240/udp
 }
 
 function firewall_bb2server {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_bbserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_bdserver {
      echo Starting game specific firewall
+     ufw allow 26900
+     ufw allow 27015
 }
 function firewall_bf1942server {
      echo Starting game specific firewall
