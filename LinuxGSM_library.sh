@@ -895,50 +895,75 @@ function firewall_bdserver {
 }
 function firewall_bf1942server {
      echo Starting game specific firewall
+     ufw allow 14567
+     ufw allow 27000
 }
 
 function firewall_bmdmserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_boserver {
      echo Starting game specific firewall
+     ufw allow 27016
 }
 
 function firewall_bsserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27020
+     ufw allow 27005
 }
 
 function firewall_bt1944server {
      echo Starting game specific firewall
+     ufw allow 7780
+     ufw allow 7779
 }
 
 function firewall_ccserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_cod2server {
      echo Starting game specific firewall
+     ufw allow 28960
 }
 
 function firewall_cod4server {
      echo Starting game specific firewall
+     ufw allow 26960
+     ufw allow 28960
+     ufw allow 34243
 }
 
 function firewall_codserver {
      echo Starting game specific firewall
+     ufw allow 28960
 }
 
 function firewall_coduoserver {
      echo Starting game specific firewall
+     ufw allow 28960
 }
 
 function firewall_codwawserver {
      echo Starting game specific firewall
+     ufw allow 3074
+     ufw allow 28960
 }
 
 function firewall_csczserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_csgoserver {
@@ -950,86 +975,144 @@ function firewall_csgoserver {
 
 function firewall_csserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27005
+     ufw allow 27020
 }
 
 function firewall_cssserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_dabserver {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_dmcserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_dodserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_dodsserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_doiserver {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_dstserver {
      echo Starting game specific firewall
+     ufw allow 11000
+     ufw allow 10888
+     ufw allow 8768
+     ufw allow 27018
 }
 
 function firewall_ecoserver {
      echo Starting game specific firewall
+     ufw allow 3000
+     ufw allow 8084
+     ufw allow 3001
 }
 
 function firewall_emserver {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
+     ufw allow 47632
 }
 
 function firewall_etlserver {
      echo Starting game specific firewall
+     ufw allow 27960
 }
 
 function firewall_fctrserver {
      echo Starting game specific firewall
+     ufw allow 34197
+     ufw allow 42688
+     ufw allow 34198
 }
 
 function firewall_fofserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_gesserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27020
+     ufw allow 27005
 }
 
 function firewall_gmodserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_hl2dmserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_hldmserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_hldmsserver {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_hwserver {
      echo Starting game specific firewall
+     ufw allow 12871
+     ufw allow 12881
 }
 
 function firewall_insserver {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_jc2server {
      echo Starting game specific firewall
+     ufw allow 7777
+     ufw allow 7778
 }
 
 function firewall_jc3server {
