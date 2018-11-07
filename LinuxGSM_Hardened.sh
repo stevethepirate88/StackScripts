@@ -30,6 +30,7 @@ service sshd stop
 apt-get -o Acquire::ForceIPv4=true update
 # console-setup = derp
 DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::ForceIPv4=true -y upgrade
+DEBIAN_FRONTEND=noninteractive apt-get -o Acquire::ForceIPv4=true -y install ufw
 
 # set up user 
 adduser $SSUSER --disabled-password --gecos "" && \
