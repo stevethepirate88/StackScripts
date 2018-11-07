@@ -661,7 +661,7 @@ function configure_insserver {
 
 function configure_jc2server {
      echo No Extra Configurations Needed
-     sed `s/BindIP                      = ""/BindIP = "$IPADDRESS"/` ~/home/$gameserver/serverfiles/config.lua > ~home/$gameserver/serverfiles/config.lua
+     sed `s/BindIP                      = ""/BindIP = "$IPADDRESS"/` ~/home/$GAMESERVER/serverfiles/config.lua
 }
 
 function configure_jc3server {
