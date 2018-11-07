@@ -71,7 +71,7 @@ echo ...done
 
 # This sets the variable $IPADDR to the IP address the new Linode receives.
 echo Configuring IP address
-IPADDR=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://')
+IPADDR=`hostname -I | awk '{print$1}'`
 
 # Add a user for the game server
 echo Setting up a user
