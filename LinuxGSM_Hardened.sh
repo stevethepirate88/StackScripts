@@ -144,10 +144,6 @@ echo $IPADDR $FQDN $HOSTNAME >> /etc/hosts
 # Starting the SSH service back up to allow the peasants into their kingdom
 service ssh start
 
-# Start it up!
-echo Starting up the gameserver!
-su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER start"
-
 # Setting up the firewall
 echo firewall rules incoming
 ufw default deny incoming
@@ -156,5 +152,9 @@ firewall_$GAMESERVER
 systemctl enable ufw
 systemctl start ufw
 ufw enable
+
+# Start it up!
+echo Starting up the gameserver!
+su - $GAMESERVER -c "/home/$GAMESERVER/$GAMESERVER start"
 
 echo "Job's done!"
