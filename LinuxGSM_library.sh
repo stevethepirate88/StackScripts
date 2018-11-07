@@ -13,7 +13,12 @@ function dependency_arma3server {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
-
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_bb2server {
@@ -57,6 +62,12 @@ function dependency_bsserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_bt1944server {
@@ -273,6 +284,11 @@ function dependency_mcserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux default-jre
+     add-apt-repository -y ppa:webupd8team/java
+     apt -q -y remove openjdk-11*
+     apt -q -y purge openjdk-11*
+     apt -q -y install openjdk-8-jre-headless
+     update-ca-certificates -f
 }
 
 function dependency_mtaserver {
@@ -303,6 +319,12 @@ function dependency_ns2server {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 speex libtbb2
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_opforserver {
@@ -370,6 +392,12 @@ function dependency_roserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_rustserver {
@@ -394,6 +422,12 @@ function dependency_sbserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_sdtdserver {
@@ -430,6 +464,12 @@ function dependency_terrariaserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_tf2server {
@@ -460,6 +500,12 @@ function dependency_twserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
 }
 
 function dependency_ut2k4server {
@@ -503,12 +549,7 @@ function configure_arkserver {
 }
 
 function configure_arma3server {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_bb2server {
@@ -535,12 +576,7 @@ function configure_boserver {
 }
 
 function configure_bsserver {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_bt1944server {
@@ -685,11 +721,7 @@ function configure_l4dserver {
 }
 
 function configure_mcserver {
-  add-apt-repository -y ppa:webupd8team/java
-  apt -q -y remove openjdk-11*
-  apt -q -y purge openjdk-11*
-  apt -q -y install openjdk-8-jre-headless
-  update-ca-certificates -f
+     echo No Extra configurations Needed
 }
 
 function configure_mtaserver {
@@ -709,12 +741,7 @@ function configure_ns2cserver {
 }
 
 function configure_ns2server {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_opforserver {
@@ -758,12 +785,7 @@ function configure_ricochetserver {
 }
 
 function configure_roserver {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra configurations Needed
 }
 
 function configure_rustserver {
@@ -779,12 +801,7 @@ function configure_sampserver {
 }
 
 function configure_sbserver {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_sdtdserver {
@@ -808,12 +825,7 @@ function configure_svenserver {
 }
 
 function configure_terrariaserver {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_tf2server {
@@ -833,12 +845,7 @@ function configure_tuserver {
 }
 
 function configure_twserver {
-     echo Requires Steam username and password to install
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
-     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
-     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
-     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     echo No Extra Configurations Needed
 }
 
 function configure_ut2k4server {
