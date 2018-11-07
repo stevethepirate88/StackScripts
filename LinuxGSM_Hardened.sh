@@ -104,6 +104,12 @@ echo running LinuxGSM script
 su - $GAMESERVER -c "/home/$GAMESERVER/linuxgsm.sh $GAMESERVER"
 
 #
+# Game specific settings
+#
+echo Configuring the gameserver
+configure_$GAMESERVER
+
+#
 # Installing the Server
 #
 echo Installing the Server
@@ -115,12 +121,6 @@ echo -e "\ngslt=$GSLT" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESE
 else
 echo No Gameserver Login Token Needed
 fi
-
-#
-# Game specific settings
-#
-echo Configuring the gameserver
-configure_$GAMESERVER
 
 # Update the server IP and name
 echo Updating the server IP and name
