@@ -73,6 +73,11 @@ echo ...done
 echo Configuring IP address
 IPADDR=$(/sbin/ifconfig eth0 | awk '/inet / { print $2 }' | sed 's/addr://')
 
+# Add a user for the game server
+echo Setting up a user
+adduser --disabled-password --gecos "" $GAMESERVER
+echo "$GAMESERVER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+
 # Install LinuxGSM and the Game Server of your choice
 echo Setting up Dependencies
 export DEBIAN_FRONTEND=noninteractive
@@ -82,10 +87,6 @@ dependency_$GAMESERVER
 # Continuing with download, installation, setup, and execution of the game server
 #
 
-# Add a user for the game server
-echo Setting up a user
-adduser --disabled-password --gecos "" $GAMESERVER
-echo "$GAMESERVER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Download and the LinuxGSM script
 echo Downloading LinuxGSM
@@ -101,12 +102,6 @@ echo running LinuxGSM script
 su - $GAMESERVER -c "/home/$GAMESERVER/linuxgsm.sh $GAMESERVER"
 
 #
-# Game specific settings
-#
-echo Configuring the gameserver
-configure_$GAMESERVER
-
-#
 # Installing the Server
 #
 echo Installing the Server
@@ -118,6 +113,12 @@ echo -e "\ngslt=$GSLT" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/$GAMESE
 else
 echo No Gameserver Login Token Needed
 fi
+
+#
+# Game specific settings
+#
+echo Configuring the gameserver
+configure_$GAMESERVER
 
 # Update the server IP and name
 echo Updating the server IP and name
