@@ -1195,7 +1195,7 @@ function firewall_pcserver {
 
 function firewall_pstbsserver {
      echo Starting game specific firewall
-)
+}
 
 function firewall_pvkiiserver {
      echo Starting game specific firewall
