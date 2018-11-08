@@ -1170,6 +1170,7 @@ function firewall_mtaserver {
 
 function firewall_mumbleserver {
      echo Starting game specific firewall
+     ufw allow 64738
 }
 
 function firewall_nmrihserver {
@@ -1247,10 +1248,15 @@ function firewall_sbserver {
 
 function firewall_sdtdserver {
      echo Starting game specific firewall
+     ufw allow 26900
+     ufw allow 26901
+     ufw allow 26902
+     ufw allow 8081
 }
 
 function firewall_squadserver {
      echo Starting game specific firewall
+
 }
 
 function firewall_ss3server {
@@ -1285,6 +1291,10 @@ function firewall_tfcserver {
 
 function firewall_ts3server {
      echo Starting game specific firewall
+     ufw allow 9987
+     ufw allow 30033
+     ufw allow 10011
+     egrep -i '(loginname|token=)' ~/stackscript.log > TeamSpeak3Login.log
 }
 
 function firewall_tuserver {
