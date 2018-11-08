@@ -1162,6 +1162,7 @@ function firewall_l4dserver {
 
 function firewall_mcserver {
      echo Starting game specific firewall
+     ufw allow 25565
 }
 
 function firewall_mtaserver {
