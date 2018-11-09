@@ -82,7 +82,8 @@ echo "$GAMESERVER ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
 
 # Install LinuxGSM and the Game Server of your choice
 echo Setting up Dependencies
-export DEBIAN_FRONTEND=noninteractive dependency_$GAMESERVER
+export DEBIAN_FRONTEND=noninteractive 
+dependency_$GAMESERVER
 
 #
 # Continuing with download, installation, setup, and execution of the game server
