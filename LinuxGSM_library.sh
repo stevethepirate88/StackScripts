@@ -327,7 +327,7 @@ function dependency_pcserver {
 function dependency_pstbsserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
-     sudo dpkg --add-architecture i386; sudo apt update; sudo apt install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     export DEBIAN_FRONTEND=noninteractive sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
 }
 
 function dependency_pvkiiserver {
@@ -420,7 +420,8 @@ function dependency_squadserver {
 function dependency_ss3server {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
-     sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 libxrandr2:i386 libglu1-mesa:i386 libxtst6:i386 libusb-1.0-0:i386 libopenal1:i386 libpulse0:i386 libdbus-glib-1-2:i386 libnm-glib4:i386 libudev0:i386
+     sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
+     sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install libxrandr2:i386 libglu1-mesa:i386 libxtst6:i386 libusb-1.0-0-dev:i386 libxxf86vm1:i386 libopenal1:i386 libssl1.0.0:i386 libgtk2.0-0:i386 libdbus-glib-1-2:i386 libnm-glib-dev:i386
 }
 
 function dependency_stserver {
@@ -432,7 +433,8 @@ function dependency_stserver {
 function dependency_svenserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
-     sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 libssl1.0.0:i386
+     sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 libssl1.0.2:i386
+
 }
 
 function dependency_terrariaserver {
@@ -491,7 +493,7 @@ function dependency_ut99server {
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 libsdl1.2debian
 }
 
-function dependency_vvserver {
+function dependency_vsserver {
      debconf-set-selections <<< "postfix postfix/main_mailer_type string 'No Configuration'"
      debconf-set-selections <<< "postfix postfix/mailname string $FQDN"
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386
@@ -859,7 +861,7 @@ function configure_ut99server {
      echo No Extra Configurations Needed
 }
 
-function configure_vvserver { 
+function configure_vsserver { 
      echo No Extra Configurations Needed
 }
 
@@ -1154,10 +1156,13 @@ function firewall_kfserver {
 
 function firewall_l4d2server {
      echo Starting game specific firewall
+     ufw allow 26901
+     ufw allow 27015
 }
 
 function firewall_l4dserver {
      echo Starting game specific firewall
+     ufw allow 27015
 }
 
 function firewall_mcserver {
@@ -1167,6 +1172,10 @@ function firewall_mcserver {
 
 function firewall_mtaserver {
      echo Starting game specific firewall
+     ufw allow 34219
+     ufw allow 22003
+     ufw allow 22126
+     ufw allow 22005
 }
 
 function firewall_mumbleserver {
@@ -1176,70 +1185,114 @@ function firewall_mumbleserver {
 
 function firewall_nmrihserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27020
+     ufw allow 27005
 }
 
 function firewall_ns2cserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27016
+     ufw allow 8080
 }
 
 function firewall_ns2server {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27016
+     ufw allow 8080
 }
 
 function firewall_opforserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27005
 }
 
 function firewall_pcserver {
      echo Starting game specific firewall
+     ufw allow 27016
+     ufw allow 8766
+     ufw allow 27015
 }
 
 function firewall_pstbsserver {
      echo Starting game specific firewall
+     ufw allow 10037
+     ufw allow 10072
+     ufw allow 21114
+     
 }
 
 function firewall_pvkiiserver {
      echo Starting game specific firewall
+     ufw allow 27005
+     ufw allow 27015
+     ufw allow 27020
 }
 
 function firewall_pzserver {
      echo Starting game specific firewall
+     ufw allow 16261
+     ufw allow 27015
+     
 }
 
 function firewall_q2server {
      echo Starting game specific firewall
-}
+     ufw allow 27910
+     ufw allow 53496}
 
 function firewall_q3server {
      echo Starting game specific firewall
+     ufw allow 27960
 }
 
 function firewall_qlserver {
      echo Starting game specific firewall
+     ufw allow 27960
+     ufw allow 28960
 }
 
 function firewall_qwserver {
      echo Starting game specific firewall
+     ufw allow 72500
 }
 
 function firewall_ricochetserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27005
 }
 
 function firewall_roserver {
      echo Starting game specific firewall
+     ufw allow 10757
+     ufw allow 7757
+     ufw allow 7758
+     ufw allow 20610
+     ufw allow 28902
+     ufw allow 28900
+     ufw allow 8075
 }
 
 function firewall_rustserver {
      echo Starting game specific firewall
+     ufw allow 28015
+     ufw allow 28016
 }
 
 function firewall_rwserver {
      echo Starting game specific firewall
+     ufw allow 4255
+     ufw allow 4254
+     ufw allow 4253
 }
 
 function firewall_sampserver {
      echo Starting game specific firewall
+     ufw allow 7777
 }
 
 function firewall_sbserver {
@@ -1257,7 +1310,9 @@ function firewall_sdtdserver {
 
 function firewall_squadserver {
      echo Starting game specific firewall
-
+     ufw allow 27165
+     ufw allow 7787
+     ufw allow 21114
 }
 
 function firewall_ss3server {
@@ -1266,6 +1321,10 @@ function firewall_ss3server {
 
 function firewall_stserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 54509
+     ufw allow 27500
+     ufw allow 55420
 }
 
 function firewall_svenserver {
@@ -1288,6 +1347,8 @@ function firewall_tf2server {
 
 function firewall_tfcserver {
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27005
 }
 
 function firewall_ts3server {
@@ -1300,32 +1361,63 @@ function firewall_ts3server {
 
 function firewall_tuserver {
      echo Starting game specific firewall
+     ufw allow 41442
+     ufw allow 27015
+     ufw allow 7777
+     ufwa llow 7778
 }
 
 function firewall_twserver {
      echo Starting game specific firewall
+     ufw allow 8303
 }
 
 function firewall_ut2k4server {
      echo Starting game specific firewall
+     ufw allow 10777
+     ufw allow 7777
+     ufw allow 7778
+     ufw allow 7787
+     ufw allow 8075
+     ufw allow 28900
+     ufw allow 28902
 }
 
 function firewall_ut3server {
      echo Starting game specific firewall
+     ufw allow 51975
+     ufw allow 7777
+     ufw allow 57686
+     ufw allow 80
+     ufw allow 6500
 }
 
 function firewall_ut99server {
      echo Starting game specific firewall
+     ufw allow 7777
+     ufw allow 7778
+     ufw allow 7779
+     ufw allow 7780
+     ufw allow 7781
+     ufw allow 7782
+     ufw allow 8777
+     ufw allow 8076
 }
 
-function firewall_vvserver { 
+function firewall_vsserver { 
      echo Starting game specific firewall
+     ufw allow 27015
+     ufw allow 27005
 }
 
-function firewall_wetserve {
+function firewall_wetserver {
      echo Starting game specific firewall
+     ufw allow 27960
 }
 
 function firewall_zpsserver {
           echo Starting game specific firewall
+          ufw allow 27015
+          ufw allow 27020
+          ufw allow 27005
 }
