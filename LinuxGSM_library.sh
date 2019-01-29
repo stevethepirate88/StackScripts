@@ -511,6 +511,368 @@ function dependency_zpsserver {
      sudo dpkg --add-architecture i386; sudo apt update; sudo apt -q -y install mailutils postfix curl wget file bzip2 gzip unzip bsdmainutils python util-linux ca-certificates binutils bc jq tmux lib32gcc1 libstdc++6 libstdc++6:i386 lib32tinfo5
 }
 
+function preconfigure_arkserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_arma3server {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_bb2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_bbserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_bdserver {
+     echo No Extra Configurations Needed
+}
+function preconfigure_bf1942server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_bmdmserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_boserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_bsserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_bt1944server {
+     echo No Extra Congigurations Needed
+}
+
+function preconfigure_ccserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_cod2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_cod4server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_codserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_coduoserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_codwawserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_csczserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_csgoserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_csserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_cssserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_dabserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_dmcserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_dodserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_dodsserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_doiserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_dstserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ecoserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_emserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_etlserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_fctrserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_fofserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_gesserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_gmodserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_hl2dmserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_hldmserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_hldmsserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_hwserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_insserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_jc2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_jc3server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_kf2server {
+     echo Requires a Steam username and password
+}
+
+function preconfigure_kfserver {
+     echo Requires a Steam username and password
+}
+
+function preconfigure_l4d2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_l4dserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_mcserver {
+     echo No Extra configurations Needed
+}
+
+function preconfigure_mtaserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_mumbleserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_nmrihserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ns2cserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_ns2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_opforserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_pcserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_pstbsserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_pvkiiserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_pzserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_q2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_q3server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_qlserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_qwserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ricochetserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_roserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_rustserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_rwserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_sampserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_sbserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_sdtdserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_squadserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ss3server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_stserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_svenserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_terrariaserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_tf2server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_tfcserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ts3server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_tuserver {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_twserver {
+     echo Requires Steam username and password to install
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm"
+     su - $GAMESERVER -c "mkdir /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER"
+     su - $GAMESERVER -c "touch /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steamuser=\""$STEAMUSER"\" >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+     su - $GAMESERVER -c "echo steampass=\'"$STEAMPASSWORD"\' >> /home/$GAMESERVER/lgsm/config-lgsm/$GAMESERVER/common.cfg"
+}
+
+function preconfigure_ut2k4server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ut3server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_ut99server {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_vsserver { 
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_wetserve {
+     echo No Extra Configurations Needed
+}
+
+function preconfigure_zpsserver {
+     echo No Extra Configurations Needed
+}
+
 function configure_arkserver {
      echo No Extra Configurations Needed
 }
